@@ -27,15 +27,4 @@ class CreateDatabase(object):
             '/usr/share/postgresql/8.4/contrib/postgis_comments.sql']:
             Database.execute('psql --no-password -f {0} -d {1} -a'.format(i, self.__databaseName))
         
-        self.__run_scripts()
-
-    def __run_scripts(self):
-        l = []
-        with open(self.__manifestPath) as manifest:
-            for line in manifest:
-                m = re.search("^[\w\d_'-]+.sql", line)
-                if not m is None:
-                    l.append(m.group(0))
-                
-        for i in l:
-            Database.execute('psql --no-password -f {0} -d {1} -a'.format(os.path.join(self.__scriptDirectory, i), self.__databaseName))
+        Database.run_scripts(self.__databaseName, self.__manifestPath)

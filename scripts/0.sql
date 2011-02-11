@@ -73,3 +73,23 @@ WITH (
 ALTER TABLE openid_accounts OWNER TO jacob;
 GRANT ALL ON TABLE openid_accounts TO jacob;
 GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE openid_accounts TO kestava;
+
+CREATE TABLE messages
+(
+  message_id serial NOT NULL,
+  created_when timestamp without time zone NOT NULL default now(),
+  message_text character varying(250),
+  ref_account_id integer,
+  CONSTRAINT messages_pk PRIMARY KEY (message_id),
+  CONSTRAINT messages_fk1 FOREIGN KEY (ref_account_id)
+      REFERENCES accounts (account_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE messages OWNER TO jacob;
+GRANT ALL ON TABLE messages TO jacob;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE messages TO kestava;
+
+GRANT USAGE ON TABLE messages_message_id_seq TO kestava;
