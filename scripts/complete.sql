@@ -6,6 +6,11 @@
 \i create_roles.sql
 \i install_postgis.sql
 \i schemas/all.sql
-\i tables/all.sql
+
+\i tables/kestava/all.sql
+\i tables/testing/all.sql
+
 \i functions/all.sql
-\i testdata/all.sql
+
+\i testdata/kestava/all.sql
+\i testdata/testing/all.sql
