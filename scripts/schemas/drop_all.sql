@@ -1,5 +1,9 @@
 
 \c :db_name
 
+\set ON_ERROR_STOP 0
+
 DROP SCHEMA kestava CASCADE;
 DROP SCHEMA testing CASCADE;
+
+\set ON_ERROR_STOP 1
