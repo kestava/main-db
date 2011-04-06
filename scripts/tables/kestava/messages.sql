@@ -4,7 +4,7 @@
 CREATE TABLE kestava.messages
 (
   message_id serial NOT NULL,
-  created_when timestamp without time zone NOT NULL default now(),
+  created_when timestamp without time zone NOT NULL default date_trunc('second', now()),
   message_text character varying(250),
   ref_account_id integer,
   CONSTRAINT messages_pk PRIMARY KEY (message_id),
