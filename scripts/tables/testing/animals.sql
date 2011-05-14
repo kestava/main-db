@@ -8,6 +8,6 @@ CREATE TABLE testing.animals
     CONSTRAINT animals_pk PRIMARY KEY (animal_id)
 );
 
-GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE testing.animals TO kestava;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE testing.animals TO unsilo;
 
-GRANT USAGE ON TABLE testing.animals_animal_id_seq TO kestava;
+GRANT USAGE ON TABLE testing.animals_animal_id_seq TO unsilo;

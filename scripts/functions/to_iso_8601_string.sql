@@ -1,7 +1,7 @@
 
 \c :db_name
 
-CREATE OR REPLACE FUNCTION kestava.to_iso_8601_string (
+CREATE OR REPLACE FUNCTION unsilo.to_iso_8601_string (
     from_dt timestamp
 ) RETURNS varchar AS $$
 BEGIN

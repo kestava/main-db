@@ -1,9 +1,9 @@
 
 \c :db_name
 
-CREATE SCHEMA kestava
+CREATE SCHEMA unsilo
     AUTHORIZATION postgres;
     
-GRANT ALL ON SCHEMA kestava TO postgres;
-GRANT ALL ON SCHEMA kestava TO public;
-COMMENT ON SCHEMA kestava IS 'Kestava database objects';
+GRANT ALL ON SCHEMA unsilo TO postgres;
+GRANT ALL ON SCHEMA unsilo TO public;
+COMMENT ON SCHEMA unsilo IS 'Unsilo database objects';

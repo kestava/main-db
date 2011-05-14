@@ -7,4 +7,4 @@ CREATE TABLE testing.some_dates
     without_tz timestamp without time zone
 );
 
-GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE testing.some_dates TO kestava;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE testing.some_dates TO unsilo;

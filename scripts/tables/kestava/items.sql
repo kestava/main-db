@@ -1,7 +1,7 @@
 
 \c :db_name
 
-CREATE TABLE kestava.items
+CREATE TABLE unsilo.items
 (
     item_id serial CONSTRAINT items_pk PRIMARY KEY,
     title character varying(200) NOT NULL,
@@ -9,14 +9,14 @@ CREATE TABLE kestava.items
     quantity numeric(10,2) NOT NULL,
     loc geography(Point,4326) NOT NULL,
     ref_user_account_id integer
-        CONSTRAINT items_fk1 REFERENCES kestava.user_accounts
+        CONSTRAINT items_fk1 REFERENCES unsilo.user_accounts
 )
 WITH (
     OIDS=FALSE
 );
 
-GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE kestava.items TO kestava;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE unsilo.items TO unsilo;
 
-CREATE INDEX items_gix ON kestava.items USING gist (loc);
+CREATE INDEX items_gix ON unsilo.items USING gist (loc);
 
-GRANT USAGE ON TABLE kestava.items_item_id_seq TO kestava;
+GRANT USAGE ON TABLE unsilo.items_item_id_seq TO unsilo;

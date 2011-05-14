@@ -1,7 +1,7 @@
 
 \c :db_name
 
-CREATE TABLE kestava.user_accounts
+CREATE TABLE unsilo.user_accounts
 (
   user_account_id serial NOT NULL,
   user_name character varying(40) NOT NULL,
@@ -16,6 +16,6 @@ WITH (
   OIDS=FALSE
 );
 
-GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE kestava.user_accounts TO kestava;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE unsilo.user_accounts TO unsilo;
 
-GRANT USAGE ON TABLE kestava.user_accounts_user_account_id_seq TO kestava;
+GRANT USAGE ON TABLE unsilo.user_accounts_user_account_id_seq TO unsilo;

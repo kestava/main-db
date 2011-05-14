@@ -7,4 +7,4 @@ CREATE DATABASE :db_name
        LC_COLLATE = 'en_US.utf8'
        LC_CTYPE = 'en_US.utf8'
        CONNECTION LIMIT = -1;
-COMMENT ON DATABASE :db_name IS 'Where Kestava data lives';
+COMMENT ON DATABASE :db_name IS 'Where Unsilo data lives';
